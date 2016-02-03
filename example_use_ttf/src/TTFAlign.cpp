@@ -1,8 +1,8 @@
 #include "TTFAlign.h"
 
-void TTFAlign::loadFont(string name, int font_size)
+void TTFAlign::load(string name, int font_size)
 {
-	font_.loadFont(name, font_size);
+	font_.load(name, font_size);
 	setCharSize(font_size, font_size);
 	setLetterSpacing(font_.getLetterSpacing());
 	setLineHeight(font_.getLineHeight());

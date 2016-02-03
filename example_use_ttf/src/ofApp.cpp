@@ -1,15 +1,15 @@
-#include "testApp.h"
+#include "ofApp.h"
 
 //--------------------------------------------------------------
-void testApp::setup(){
-	text_.loadFont("verdana.ttf", 30);
+void ofApp::setup(){
+	text_.load(OF_TTF_MONO, 30);
 	
 	x_.setup("x", 0, 0, ofGetWidth());
 	y_.setup("y", 0, 0, ofGetHeight());
 	halign_.setup("h_align", 0, 0, 2);
 	valign_.setup("v_align", 0, 0, 2);
-	halign_.addListener(this, &testApp::refreshAlignStr);
-	valign_.addListener(this, &testApp::refreshAlignStr);
+	halign_.addListener(this, &ofApp::refreshAlignStr);
+	valign_.addListener(this, &ofApp::refreshAlignStr);
 	align_str_.setup("align", "left-top");
 	panel_.setup();
 	panel_.add(&x_);
@@ -19,7 +19,7 @@ void testApp::setup(){
 	panel_.add(&align_str_);
 }
 
-void testApp::refreshAlignStr(int&)
+void ofApp::refreshAlignStr(int&)
 {
 	string str = "-";
 	switch(halign_) {
@@ -36,16 +36,16 @@ void testApp::refreshAlignStr(int&)
 }
 
 //--------------------------------------------------------------
-void testApp::update(){
+void ofApp::update(){
 
 }
 
 //--------------------------------------------------------------
-void testApp::draw(){
+void ofApp::draw(){
 	ofPushStyle();
 	ofSetColor(ofColor::yellow);
-	ofLine(0, y_, ofGetWidth(), y_);
-	ofLine(x_, 0, x_, ofGetHeight());
+	ofDrawLine(0, y_, ofGetWidth(), y_);
+	ofDrawLine(x_, 0, x_, ofGetHeight());
 	ofPopStyle();
 	unsigned int flags = 0;
 	switch(halign_) {
@@ -63,46 +63,46 @@ void testApp::draw(){
 }
 
 //--------------------------------------------------------------
-void testApp::keyPressed(int key){
+void ofApp::keyPressed(int key){
 
 }
 
 //--------------------------------------------------------------
-void testApp::keyReleased(int key){
+void ofApp::keyReleased(int key){
 
 }
 
 //--------------------------------------------------------------
-void testApp::mouseMoved(int x, int y ){
+void ofApp::mouseMoved(int x, int y ){
 
 }
 
 //--------------------------------------------------------------
-void testApp::mouseDragged(int x, int y, int button){
+void ofApp::mouseDragged(int x, int y, int button){
 
 }
 
 //--------------------------------------------------------------
-void testApp::mousePressed(int x, int y, int button){
+void ofApp::mousePressed(int x, int y, int button){
 
 }
 
 //--------------------------------------------------------------
-void testApp::mouseReleased(int x, int y, int button){
+void ofApp::mouseReleased(int x, int y, int button){
 
 }
 
 //--------------------------------------------------------------
-void testApp::windowResized(int w, int h){
+void ofApp::windowResized(int w, int h){
 
 }
 
 //--------------------------------------------------------------
-void testApp::gotMessage(ofMessage msg){
+void ofApp::gotMessage(ofMessage msg){
 
 }
 
 //--------------------------------------------------------------
-void testApp::dragEvent(ofDragInfo dragInfo){ 
+void ofApp::dragEvent(ofDragInfo dragInfo){ 
 
 }
