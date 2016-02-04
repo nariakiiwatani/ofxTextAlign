@@ -19,10 +19,6 @@ void ofApp::setup(){
 	min_height_.addListener(this, &ofApp::callbackMinHeight);
 	max_height_.setup("max height", 0, 0, ofGetHeight());
 	max_height_.addListener(this, &ofApp::callbackMaxHeight);
-	letter_spacing_.setup("letter spacing", 0, 0, 100);
-	letter_spacing_.addListener(this, &ofApp::callbackLetterSpacing);
-	line_height_.setup("line height", 0, 0, 100);
-	line_height_.addListener(this, &ofApp::callbackLineHeight);
 	panel_.setup();
 	panel_.add(&x_);
 	panel_.add(&y_);
@@ -71,16 +67,6 @@ void ofApp::callbackMinHeight(int &val)
 void ofApp::callbackMaxHeight(int &val)
 {
 	text_.setMaxHeight(val);
-}
-
-void ofApp::callbackLetterSpacing(int &val)
-{
-	text_.setLetterSpacing(val);
-}
-
-void ofApp::callbackLineHeight(int &val)
-{
-	text_.setLineHeight(val);
 }
 
 //--------------------------------------------------------------
