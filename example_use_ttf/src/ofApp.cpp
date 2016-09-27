@@ -92,7 +92,7 @@ void ofApp::draw(){
 		case 1:	flags |= ofxTextAlign::VERTICAL_ALIGN_MIDDLE;	break;
 		case 2:	flags |= ofxTextAlign::VERTICAL_ALIGN_BOTTOM;	break;
 	}
-	text_.draw("this is an example of\nofxTextAlign.\nit supports\nhorizontal and\nvertical align. ", x_, y_, flags);
+	text_.draw("The quick\nbrown fox\njumps over\nthe lazy dog", x_, y_, flags);
 	panel_.draw();
 }
 

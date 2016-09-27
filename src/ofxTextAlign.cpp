@@ -25,7 +25,7 @@ const char* ofxTextAlign::drawLine(const char *str, float x, float y)
 			++ptr;
 			break;
 		}
-		float interval = getCharWidth(*ptr) + getKerning(*(ptr+1), *ptr) + extra_spacing;
+		float interval = getAdvance(*ptr) + getKerning(*(ptr+1), *ptr) + extra_spacing;
 		ptr = drawChar(ptr, x, y);
 		x += interval;
 	}
@@ -39,7 +39,7 @@ float ofxTextAlign::getOffsetX(const char *str, unsigned int flags, bool single_
 		return 0;
 	}
 	else if(single_line && getLetterCount(str, true) < 2) {
-		float width = getCharWidth(*str);
+		float width = getAdvance(*str);
 		switch(flag) {
 			case HORIZONTAL_ALIGN_CENTER:	return -width/2.f;
 			case HORIZONTAL_ALIGN_RIGHT:	return -width;
@@ -86,7 +86,7 @@ float ofxTextAlign::getWidth(const char *str, bool single_line)
 				tmp += getKerning(*ptr, prev);
 			}
 			prev = *ptr;
-			tmp += getCharWidth(*ptr);
+			tmp += getAdvance(*ptr);
 			break;
 		}
 		++ptr;

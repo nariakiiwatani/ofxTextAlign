@@ -13,11 +13,11 @@ const char* TextureAlign::drawChar(const char *str, float x, float y)
 	float tex_h = texture_.getHeight();
 	float tex_s = index*tex_w;
 	float tex_t = 0;
-	texture_.drawSubsection(x, y, getCharWidth(*str), getLineHeight(), tex_s, tex_t, tex_w, tex_h);
+	texture_.drawSubsection(x, y, getAdvance(*str), getLineHeight(), tex_s, tex_t, tex_w, tex_h);
 	return str+1;
 }
 
-float TextureAlign::getCharWidth(char ch) const
+float TextureAlign::getAdvance(char ch) const
 {
 	return 32;
 }

@@ -8,13 +8,9 @@ const char* ofxTextAlignTTF::drawChar(const char *str, float x, float y)
 	return str+1;
 }
 
-float ofxTextAlignTTF::getCharWidth(char ch) const
+float ofxTextAlignTTF::getAdvance(char ch) const
 {
-	return cps[ch-NUM_CHARACTER_TO_START].advance;
-}
-float ofxTextAlignTTF::getKerning(char ch, char prev) const
-{
-	return ofTrueTypeFont::getKerning(ch, prev);
+	return cps[indexForGlyph(ch)].advance;
 }
 float ofxTextAlignTTF::getLineHeight() const
 {

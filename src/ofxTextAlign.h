@@ -27,7 +27,7 @@ public:
 	void setMinHeight(float height) { min_height_=height; }
 protected:
 	virtual const char* drawChar(const char *str, float x, float y)=0;
-	virtual float getCharWidth(char ch) const=0;
+	virtual float getAdvance(char ch) const=0;
 	virtual float getLineHeight() const=0;
 	virtual float getAscenderHeight() const { return 0; }
 	virtual float getKerning(char ch, char prev) const { return 0; };

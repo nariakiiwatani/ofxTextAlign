@@ -8,8 +8,7 @@ class TTF : public TextAlign, public ofTrueTypeFont
 {
 private:
 	const char* drawChar(const char *str, float x, float y);
-	float getCharWidth(char ch) const;
-	float getKerning(char ch, char prev) const;
+	float getAdvance(char ch) const;
 	float getLineHeight() const;
 	float getAscenderHeight() const;
 };

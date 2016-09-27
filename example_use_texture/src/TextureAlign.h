@@ -9,7 +9,7 @@ public:
 	void loadTexture(string name, int char_width, int char_height);
 private:
 	const char* drawChar(const char *str, float x, float y);
-	float getCharWidth(char ch) const;
+	float getAdvance(char ch) const;
 	float getLineHeight() const;
 private:
 	ofTexture texture_;
