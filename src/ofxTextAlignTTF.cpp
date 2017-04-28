@@ -10,7 +10,7 @@ const char* ofxTextAlignTTF::drawChar(const char *str, float x, float y)
 
 float ofxTextAlignTTF::getAdvance(char ch) const
 {
-	return cps[indexForGlyph(ch)].advance;
+	return cps[ch-NUM_CHARACTER_TO_START].advance;
 }
 float ofxTextAlignTTF::getLineHeight() const
 {
